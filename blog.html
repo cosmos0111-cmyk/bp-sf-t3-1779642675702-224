@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <title>화곡 셔츠룸 블로그 - 마포 네트워크 보안 인사이트</title>
+    <meta name="description" content="화곡 셔츠룸의 네트워크 보안 전문 블로그. 2025년 마포 기업을 겨냥한 최신 위협 동향과 데이터 기반 대응 전략을 분석합니다. 300건 이상 성공 대응 실적의 노하우를 확인하세요.">
+    <meta name="keywords" content="화곡 셔츠룸, 마포 셔츠룸, 네트워크 보안, 마포 네트워크 보안, 보안 솔루션, 화곡 보안 업체, 마포 보안 전문, 블로그">
+    <link rel="canonical" href="https://sf-t3-1779642675702-224.pages.dev">
+    <meta property="og:title" content="화곡 셔츠룸 블로그 - 2025 마포 네트워크 보안 위협 보고서">
+    <meta property="og:description" content="화곡 셔츠룸이 분석한 2025년 마포 기업 대상 네트워크 보안 위협 동향. 랜섬웨어 62% 증가, 표적 공격 47% 증가. 데이터 기반 대응 전략을 지금 확인하세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sf-t3-1779642675702-224.pages.dev/blog">
+    <meta property="og:image" content="https://sf-t3-1779642675702-224.pages.dev/assets/og-blog.jpg">
+    <style>
+        /* Brutalist Avant-Garde + kr-neon-void — 전체 디자인 시스템 유지 */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0b0b0e;
+            --surface: #15151a;
+            --surface-alt: #1c1c24;
+            --border: #2a2a35;
+            --text: #ededf0;
+            --text-muted: #8b8b9e;
+            --neon-pink: #ff2d78;
+            --neon-cyan: #00f7ff;
+            --neon-green: #39ff14;
+            --accent: var(--neon-pink);
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+            --font-sans: 'Inter', 'Noto Sans KR', sans-serif;
+            --gutter: clamp(1rem, 4vw, 3rem);
+            --card-radius: 0px;
+        }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            min-height: 100vh;
+            border-left: 4px solid var(--neon-pink);
+            border-right: 4px solid var(--neon-cyan);
+        }
+        a { color: var(--neon-cyan); text-decoration: none; transition: all 0.2s; }
+        a:hover { color: var(--neon-pink); text-shadow: 0 0 12px var(--neon-pink); }
+        img { max-width: 100%; display: block; }
+        hr { border: none; border-top: 2px dashed var(--border); margin: 2rem 0; }
+
+        /* 헤더 & 네비게이션 */
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem var(--gutter);
+            border-bottom: 2px solid var(--border);
+            background: var(--surface);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-family: var(--font-mono);
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--neon-pink);
+            background: var(--bg);
+            padding: 0.3rem 0.8rem;
+            border: 2px solid var(--neon-pink);
+            box-shadow: 4px 4px 0 var(--neon-pink);
+        }
+        .logo span { color: var(--neon-cyan); }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .nav-links a { color: var(--text-muted); padding: 0.3rem 0; border-bottom: 2px solid transparent; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text); border-bottom-color: var(--neon-pink); }
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            padding: 0.25rem;
+        }
+        .hamburger-menu span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: var(--text);
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+        @media (max-width: 768px) {
+            .hamburger-menu { display: flex; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0; right: 0;
+                flex-direction: column;
+                background: var(--surface);
+                border-bottom: 2px solid var(--neon-pink);
+                padding: 1rem var(--gutter);
+                gap: 1rem;
+            }
+            .nav-links.open { display: flex; }
+        }
+
+        /* 메인 컨텐츠 */
+        main { padding: 2rem var(--gutter) 4rem; max-width: 1200px; margin: 0 auto; }
+
+        /* 히어로 섹션 (블로그 헤더) */
+        .hero {
+            padding: 3rem 0 2rem;
+            border-bottom: 3px double var(--neon-cyan);
+            margin-bottom: 3rem;
+        }
+        .hero .meta {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero h1 {
+            font-family: var(--font-mono);
+            font-size: clamp(2rem, 6vw, 3.2rem);
+            font-weight: 900;
+            line-height: 1.15;
+            text-transform: uppercase;
+            color: var(--text);
+            max-width: 24ch;
+        }
+        .hero h1 .highlight { color: var(--neon-pink); }
+        .hero .subhead {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 60ch;
+            margin-top: 1rem;
+        }
+
+        /* 블로그 본문 */
+        .post-content {
+            display: grid;
+            grid-template-columns: 1fr minmax(0, 70ch) 1fr;
+            gap: 2rem;
+        }
+        .post-content > * { grid-column: 2; }
+        .post-content .full-width { grid-column: 1 / -1; }
+        .post-content h2 {
+            font-family: var(--font-mono);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+            color: var(--neon-cyan);
+        }
+        .post-content h3 {
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 1.8rem;
+            color: var(--neon-green);
+        }
+        .post-content p {
+            margin: 1rem 0;
+            font-size: 1rem;
+            color: var(--text);
+        }
+        .post-content strong { color: var(--neon-pink); }
+        .post-content blockquote {
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            border-left: 4px solid var(--neon-pink);
+            background: var(--surface-alt);
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+        .post-content .stat-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+        }
+        .post-content .stat-item {
+            text-align: center;
+            padding: 0.5rem;
+        }
+        .stat-item .number {
+            font-family: var(--font-mono);
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--neon-pink);
+            display: block;
+        }
+        .stat-item .label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+        .post-content ul, .post-content ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        .post-content li { margin-bottom: 0.5rem; }
+        .post-content .case-study {
+            background: var(--surface-alt);
+            border: 1px solid var(--neon-cyan);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .case-study h4 { color: var(--neon-cyan); margin-bottom: 0.5rem; }
+
+        /* FAQ 섹션 */
+        .faq-section {
+            margin-top: 3rem;
+            padding: 2rem 0;
+            border-top: 2px solid var(--border);
+        }
+        .faq-section h2 {
+            font-family: var(--font-mono);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            color: var(--neon-pink);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .faq-list {
+            display: grid;
+            gap: 1rem;
+        }
+        .faq-item {
+</body>
+</html>
